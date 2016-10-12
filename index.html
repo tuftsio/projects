@@ -2,21 +2,51 @@
 layout: default
 ---
 
+<style type="text/css">
+	table th {
+		background-color: white;
+		padding-left: 0px;
+	}
+</style>
+
 <section>
-	<ul>
+		<div id="companies">
+		  <table>
+		    <thead>
+		      <tr>
+		        <th style="width:170px">Name</th>
+		        <th style="width:25px">URL</th>
+		        <th style="width:65px">Start</th>
+		        <th style="width:60px">Status</th>
+		        <th>Description</th>
+		      </tr>
+		    </thead>
 
-		{% for post in site.posts %}
+		    <tbody>
+				{% for post in site.posts %}
+				{% unless post.hidden %}
+	        <tr class="project">
+	          <!-- <td>
+	            <div class="icon"></div>
+	          </td> -->
+	          <td>
+	          	<div class="title">
+	          		<a href="{{ post.url | prepend: site.baseurl }}" title="Read about {{ post.title}} by {{ post.author }}.{% if post.tags %} Tags: {{ post.tags }}{% endif %}"><b>{{ post.title }}</b></a>
+	          	</div>
+	          </td>
+	          <td>
+	          	{% if post.link %} <a href="{{ post.link }}" target="_blank"><img src="assets/link.svg" style="height:13px"></a>{% endif %}
+	          </td>
+            <td class="post-date">
+            	<span>{{ post.date | date: "%b, '%y" }}</span>
+            </td>
+	          <td>{{ post.status }} </td>
+	          <td>{{ post.description }}</td>
+	        </tr>
+	      {% endunless %}
+				{% endfor %}
 
-		<li>
-			<div class="post-date">
-				<span>{{ post.date | date: "%b %d, %Y" }}</span>
-			</div>
-			<div class="title">
-				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-			</div>
-		</li>
-
-		{% endfor %}
-
-	</ul>
+        </tbody>
+      </table>
+    </div>
 </section>

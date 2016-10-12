@@ -271,7 +271,7 @@ article {
   }
   hr {
     border: 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #DDD;
     margin: 30px 0;
   }
   p {
@@ -292,6 +292,11 @@ article {
 }
 .back {
   text-align: center;
+  #back-button {
+    &:before {
+      content: "<<";
+    }
+  }
   a {
     text-decoration: none;
     margin: 40px auto 0;
@@ -299,21 +304,16 @@ article {
     padding: 10px;
     border: 0;
     &:before {
-      content: "<<";
       margin-right: 5px;
       color: #000;
     }
   }
 }
 section {
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      margin: 25px 0;
+  table {
+    td {
       .title {
         max-width: 100%;
         overflow: hidden !important;
@@ -332,6 +332,7 @@ section {
         margin: 0 0 0 20px;
       }
       span {
+        font-size: 13px;
         display: inline-block;
         color: #757575;
         letter-spacing: 1px;
