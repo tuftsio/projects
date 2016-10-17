@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <style type="text/css">
 	table th {
 		background-color: white;
@@ -10,43 +9,47 @@ layout: default
 </style>
 
 <section>
-		<div id="companies">
-		  <table>
-		    <thead>
-		      <tr>
-		        <th style="width:170px">Name</th>
-		        <th style="width:25px">URL</th>
-		        <th style="width:65px">Start</th>
-		        <th style="width:60px">Status</th>
-		        <th>Description</th>
-		      </tr>
-		    </thead>
+	<h1 style="text-align:center">Tufts Projects (private BETA)</h1>
+	<p>If you have a project that you're proud of, consider <a href="/new">submitting it</a>.  Alternatively, <a href="mailto:team@tufts.io">send me a message</a> and I'm happy to send you questions and help write the post.  Whether it's dead, alive, up and running, or graduated from Tufts to become a company, if others can learn from it, please include it!</p>
+	<p>This page is currently private because the posts don't yet have the expectation of being polished.  Please only share it with people who intend to add to it.</p>
+	<div id="companies">
+	  <table>
+	    <thead>
+	      <tr>
+	        <th style="width:170px">Project Title</th>
+	        <th style="width:25px">URL</th>
+	        <th style="width:65px">Start</th>
+	        <th style="width:60px">Status</th>
+	        <th>Description</th>
+	      </tr>
+	    </thead>
 
-		    <tbody>
-				{% for post in site.posts %}
-				{% unless post.hidden %}
-	        <tr class="project">
-	          <!-- <td>
-	            <div class="icon"></div>
-	          </td> -->
-	          <td>
-	          	<div class="title">
-	          		<a href="{{ post.url | prepend: site.baseurl }}" title="Read about {{ post.title}} by {{ post.author }}.{% if post.tags %} Tags: {{ post.tags }}{% endif %}"><b>{{ post.title }}</b></a>
-	          	</div>
-	          </td>
-	          <td>
-	          	{% if post.link %} <a href="{{ post.link }}" target="_blank"><img src="assets/link.svg" style="height:13px"></a>{% endif %}
-	          </td>
-            <td class="post-date">
-            	<span>{{ post.date | date: "%b, '%y" }}</span>
-            </td>
-	          <td>{{ post.status }} </td>
-	          <td>{{ post.description }}</td>
-	        </tr>
-	      {% endunless %}
-				{% endfor %}
+	    <tbody>
+			{% for post in site.posts %}
+			{% unless post.hidden %}
+        <tr class="project">
+          <!-- <td>
+            <div class="icon"></div>
+          </td> -->
+          <td>
+          	<div class="title">
+          		<a href="{{ post.url | prepend: site.baseurl }}" title="Read about {{ post.title}} by {{ post.author }}.{% if post.tags %} Tags: {{ post.tags }}{% endif %}"><b>{{ post.title }}</b></a>
+          	</div>
+          </td>
+          <td>
+          	{% if post.link %} <a href="{{ post.link }}" target="_blank"><img src="assets/link.svg" style="height:13px"></a>{% endif %}
+          </td>
+          <td class="post-date">
+          	<span>{{ post.date | date: "%b, '%y" }}</span>
+          </td>
+          <td>{{ post.status }} </td>
+          <td>{{ post.description }}</td>
+        </tr>
+      {% endunless %}
+			{% endfor %}
 
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
+  </div>
+	<a href="/new">Submit a project</a>
 </section>
