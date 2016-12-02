@@ -6,7 +6,7 @@ email: maxwell.ettelson@tufts.edu
 updated: 2016-11-07 11:45
 status: Stable
 tags: web, AlchemyAPI, emotions, IBM Watson
-link:
+link:go.tufts.io/soulsearcher
 ---
 
 Analyze & visualize emotion in Facebook conversations using IBM Watson's AlchemyAPI
